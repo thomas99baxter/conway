@@ -12,3 +12,6 @@ def grid_initialisation(x, y)
     tick_count: 0,
   }
 end
+
+def cell_initialisation
+end

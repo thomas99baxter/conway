@@ -23,6 +23,8 @@ describe "game engine" do
       expect(result[:tick_count]).to eq(0)
     end
   end
+  describe "cell initialisation" do
+  end
 end
 
 # [[],[],[]]
