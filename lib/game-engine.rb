@@ -9,5 +9,6 @@ def grid_initialisation(x, y)
   return {
     width: x,
     height: y,
+    tick_count: 0,
   }
 end

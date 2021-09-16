@@ -7,13 +7,20 @@ describe "game engine" do
     end
 
     it "should return a hash with identical width and height" do
-      expect(grid_initialisation(4,4).is_a? Hash).to eq true
-      expect(grid_initialisation(4,4)).to eq({:width=>4, :height=>4})
+      result = grid_initialisation(4,4)
+      expect(result[:width]).to eq(4)
+      expect(result[:height]).to eq(4)
     end
 
     it "should return a hash with asymmetric width and height" do
-      expect(grid_initialisation(10,3).is_a? Hash).to eq true
-      expect(grid_initialisation(10,3)).to eq({:width=>10, :height=>3})
+      result = grid_initialisation(10,3)
+      expect(result[:width]).to eq(10)
+      expect(result[:height]).to eq(3)
+    end
+    
+    it "should return a hash with correct tick count" do
+      result = grid_initialisation(10,3)
+      expect(result[:tick_count]).to eq(0)
     end
   end
 end
