@@ -23,15 +23,27 @@ describe "game engine" do
       expect(result[:tick_count]).to eq(0)
     end
   end
+
   describe "cell initialisation" do
+    it "should return a hash" do
+      result = cell_initialisation(0,0)
+      expect(result.is_a? Hash).to eq true
+    end
+
+    it "should set x position to x param" do
+      result = cell_initialisation(4,4)
+      expect(result[:x_position]).to eq 4
+    end
+
+    it "should set y position to y param" do
+      result = cell_initialisation(4,4)
+      expect(result[:y_position]).to eq 4
+    end
+
+    # this will need changed once proper cell testing is implemented
+    it "should set is_alive to false" do
+      result = cell_initialisation(4,4)
+      expect(result[:is_alive?]).to eq false
+    end
   end
 end
-
-# [[],[],[]]
-# grid = {
-#   width: x
-#   height: y
-#   cells: [
-#     [],[],[]
-#   ]
-# }
