@@ -11,11 +11,16 @@ def populate_grid(grid)
   while j <= grid[:cells].length
     grid[:cells].each do |column|
       grid[:rows].times do 
-        column.push([])
+        column.push(
+          {
+            x_position: 0,
+            y_position: 0,
+            is_alive?: false,
+          }
+        )
       end
       j += 1
     end
   end
-  p grid
   return grid
 end

@@ -27,4 +27,24 @@ describe "populate-grid" do
       expect(row.length).to eq 3
     end
   end
+
+  it "should return an array of hashes" do 
+    result = populate_grid(test_grid)
+    result[:cells].each do |row| 
+      row.each do |cell|
+        expect(cell.is_a? Hash).to eq true
+      end
+    end
+  end
+
+  it "should return an array of hashes" do 
+    result = populate_grid(test_grid)
+    expect(result[:cells][0][0]).to eq(
+      {
+        x_position: 0,
+        y_position: 0,
+        is_alive?: false, 
+      }
+    )
+  end
 end
